@@ -7,7 +7,7 @@ Differences from Other Modifiers
 Private: Accessible only within the same class. It provides the most restricted access.  
 Public: Accessible from anywhere in the application, offering the least restricted access.  
 Protected: Accessible within the same package and by subclasses, even if they are outside the package.    
-
+## If a class is defined in one package and a subclass is defined in another package, can the subclass access the protected members of the superclass? Provide an example to illustrate your answer.
 Accessing Protected Members Across Packages  
 Suppose you have a superclass defined in one package and a subclass in another package. The subclass can access the protected members of the superclass through inheritance, but not directly using an instance of the superclass.
 ```
@@ -41,3 +41,9 @@ public class Main {
     }
 }
 ```
+Superclass Definition: In the com.example.package1 package, the SuperClass has a protected field message and a protected method displayMessage().  
+Subclass Definition: In the com.example.package2 package, the SubClass extends SuperClass. It can access the protected field and method because it is a subclass.  
+Accessing Protected Members: In the SubClass, the show() method accesses the message field and displayMessage() method directly, illustrating that protected members are accessible through inheritance, even across different packages.  
+Main Class: The Main class creates an instance of SubClass and calls the show() method, which demonstrates the access to the protected members.  
+This example shows how the protected access modifier allows subclass access across package boundaries through inheritance.
+
